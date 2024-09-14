@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import data from '../data/data.json'
+import { useRoomStore } from "../stores/roomStore";
 
 export default function RoomSelector() {
-
-    // Initalize state. Do I need to init with default here?
-    const [room, setRoom] = useState("");
+    const { setRoom } = useRoomStore();
 
     return (
         <div
@@ -25,7 +24,6 @@ export default function RoomSelector() {
             <select 
                 defaultValue={data.rooms[0]["name"]}
                 onChange={(e) => {
-                    // const room = data.rooms.find((r) => r.name === roomName) // triple = vs double = ?
                     setRoom(e.target.value);
                 }}
             >
