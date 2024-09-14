@@ -1,7 +1,9 @@
+import React from "react";
 import { MapView, useMapData, useMap, Label } from "@mappedin/react-sdk";
 import "@mappedin/react-sdk/lib/esm/index.css";
 import FloorSelector from "./FloorSelector";
 import RoomSelector from "./RoomAvailability";
+import Route from "./Route";
 
 function MyCustomComponent() {
   const { mapData } = useMap();
@@ -33,6 +35,7 @@ export default function App() {
       <MyCustomComponent />
       <FloorSelector />
       <RoomSelector />
+      <Route />
     </MapView>
   ) : null;
 }
