@@ -4,13 +4,15 @@ import { CheckIcon, ChevronDownIcon } from '@radix-ui/react-icons';
 import React, { useEffect, useState } from 'react';
 import { useRoomStore } from "../stores/roomStore";
 import data from '../data/data.json'
+import { FaGraduationCap } from "react-icons/fa6";
 
 
 export default function NavBar() {
     return (
         <>
-            <div className="fixed w-full top-0 bg-white p-4 text-slate-700 text-3xl shadow-lg tracking-tight font-bold">
-                <p>LockedIn</p>
+            <div className="fixed flex w-full top-0 bg-white p-4 text-slate-700 text-3xl shadow-lg tracking-tight font-bold items-center">
+                <FaGraduationCap />
+                <p className="mx-2">LockedIn</p>
             </div>
 
             <div
