@@ -4,7 +4,7 @@
             "name": "MC 1056",
             "dates": [
                 {
-                    "date": "2024-09-16",
+                    "date": "Monday",
                     "start": "14:20",
                     "end": "22:00"
                 }
@@ -14,12 +14,12 @@
             "name": "MC 1085",
             "dates": [
                 {
-                    "date": "2024-09-16",
+                    "date": "Monday",
                     "start": "15:20",
                     "end": "16:00"
                 },
                 {
-                    "date": "2024-09-16",
+                    "date": "Monday",
                     "start": "17:20",
                     "end": "22:00"
                 }
