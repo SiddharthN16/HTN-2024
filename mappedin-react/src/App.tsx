@@ -1,6 +1,7 @@
 import React from "react";
 import { MapView, useMapData, useMap, Label } from "@mappedin/react-sdk";
 import "@mappedin/react-sdk/lib/esm/index.css";
+import FloorSelector from "./FloorSelector";
 
 function MyCustomComponent() {
   const { mapData } = useMap();
@@ -30,6 +31,7 @@ export default function App() {
   return mapData ? (
     <MapView mapData={mapData}>
       <MyCustomComponent />
+      <FloorSelector />
     </MapView>
   ) : null;
 }
