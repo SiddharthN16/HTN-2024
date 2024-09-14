@@ -4,12 +4,8 @@ import "@mappedin/react-sdk/lib/esm/index.css";
 import FloorSelector from "./FloorSelector";
 import RoomSelector from "./RoomAvailability";
 import Route from "./Route";
-
-function MyCustomComponent() {
-  const { mapData } = useMap();
 import { Labels } from "./Labels";
 import SpaceEvents from "./SpaceEvents";
-
 
 export default function App() {
   // See Demo API key Terms and Conditions
