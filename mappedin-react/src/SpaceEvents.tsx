@@ -21,10 +21,13 @@ function SpaceEvents() {
     });
 
     return (
-        selectedSpace &&
-        <div className="fixed left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-md p-5 z-50 rounded">
-            <h2 className="text-xl font-bold mb-2">{selectedSpace}</h2>
-        </div>
+        selectedSpace && (
+            <div className="fixed left-2 top-12 transform -translate-y-1/2 mt-20 mb-5 max-w-15 bg-white shadow-md p-5 z-50 rounded-lg flex flex-col justify-center">
+                <h2 className="text-2xl font-bold mb-4">{selectedSpace}</h2>
+                <div className="space-y-2">
+                </div>
+            </div>
+        )
     );
 }
 

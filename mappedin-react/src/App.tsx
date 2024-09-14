@@ -24,11 +24,9 @@ export default function App() {
 
   return mapData ? (
     <MapView mapData={mapData}>
-      <div className="fixed w-full top-0 bg-neutral-200 p-4 text-black text-3xl shadow-lg tracking-tight font-medium">
-        <p>App Name</p>
-      </div>
-      <Labels />
+      
       <FloorSelector />
+      <Labels />
       <SpaceEvents />
     </MapView>
   ) : null;
