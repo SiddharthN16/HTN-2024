@@ -3,6 +3,8 @@ import { useMap } from "@mappedin/react-sdk";
 export default function FloorSelector() {
   const { mapData, mapView } = useMap();
 
+  const sortedFloors = mapData.getByType("floor").sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <div
       style={{
@@ -25,7 +27,7 @@ export default function FloorSelector() {
           mapView.setFloor(e.target.value);
         }}
       >
-        {mapData.getByType("floor").map((floor, idx) => {
+        {sortedFloors.map((floor, idx) => {
           return (
             <option key={idx} value={floor.id}>
               {floor.name}
@@ -36,3 +38,5 @@ export default function FloorSelector() {
     </div>
   );
 }
+
+// How do I sort the floors by name?
