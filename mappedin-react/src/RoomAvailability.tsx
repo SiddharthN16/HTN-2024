@@ -20,7 +20,7 @@ export default function RoomSelector() {
             borderRadius: "5px",
             boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
           }}
-          className="text-3xl p-10"
+          className="text-xl p-10"
           > 
             <select 
                 defaultValue={data.rooms[0]["name"]}
