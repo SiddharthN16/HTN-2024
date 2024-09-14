@@ -7,7 +7,7 @@ export default function FloorSelector() {
 
   return (
     <>
-        <div className="fixed w-full top-0 bg-neutral-200 p-4 text-black text-3xl shadow-lg tracking-tight font-medium">
+        <div className="fixed w-full top-0 bg-white p-4 text-slate-700 text-3xl shadow-lg tracking-tight font-medium">
             <p>LockedIn</p>
         </div>
         <div
@@ -18,7 +18,6 @@ export default function FloorSelector() {
             zIndex: 1000,
             display: "flex",
             alignItems: "center",
-            background: "rgba(255, 255, 255, 1)",
             padding: "10px",
             borderRadius: "5px",
             boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
@@ -30,7 +29,7 @@ export default function FloorSelector() {
             onChange={(e) => {
             mapView.setFloor(e.target.value);
             }}
-            className="bg-white text-black rounded"
+            className="rounded"
         >
             {sortedFloors.map((floor, idx) => {
             return (

@@ -24,7 +24,6 @@ export default function App() {
 
   return mapData ? (
     <MapView mapData={mapData}>
-      
       <FloorSelector />
       <Labels />
       <SpaceEvents />
