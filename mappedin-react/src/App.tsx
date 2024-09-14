@@ -1,14 +1,9 @@
-import { MapView, useMapData, useMap, Label } from "@mappedin/react-sdk";
+import { MapView, useMapData } from "@mappedin/react-sdk";
 import "@mappedin/react-sdk/lib/esm/index.css";
 import FloorSelector from "./FloorSelector";
+import { Labels } from "./Labels";
+import SpaceEvents from "./SpaceEvents";
 
-function MyCustomComponent() {
-  const { mapData } = useMap();
-
-  return mapData.getByType("space").map((space) => {
-    return <Label target={space.center} text={space.name} />;
-  });
-}
 
 export default function App() {
   // See Demo API key Terms and Conditions
@@ -29,8 +24,12 @@ export default function App() {
 
   return mapData ? (
     <MapView mapData={mapData}>
-      <MyCustomComponent />
+      <div className="fixed w-full top-0 bg-neutral-200 p-4 text-black text-3xl shadow-lg tracking-tight font-medium">
+        <p>App Name</p>
+      </div>
+      <Labels />
       <FloorSelector />
+      <SpaceEvents />
     </MapView>
   ) : null;
 }
