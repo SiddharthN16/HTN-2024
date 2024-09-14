@@ -38,5 +38,3 @@ export default function FloorSelector() {
     </div>
   );
 }
-
-// How do I sort the floors by name?
