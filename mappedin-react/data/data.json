@@ -24,6 +24,296 @@
                     "end": "22:00"
                 }
             ]
+        },
+        {
+            "name": "MC 2017",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "12:50",
+                    "end": "13:30"
+                },
+                {
+                    "date": "Monday",
+                    "start": "15:20",
+                    "end": "16:00"
+                },
+                {
+                    "date": "Monday",
+                    "start": "17:20",
+                    "end": "18:30"
+                },
+                {
+                    "date": "Monday",
+                    "start": "21:20",
+                    "end": "22:00"
+                }
+            ]
+        },
+        {
+            "name": "MC 2034",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "08:30",
+                    "end": "10:00"
+                },
+                {
+                    "date": "Monday",
+                    "start": "17:20",
+                    "end": "18:00"
+                }
+            ]
+        },
+        {
+            "name": "MC 2035",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "08:30",
+                    "end": "09:30"
+                },
+                {
+                    "date": "Monday",
+                    "start": "11:20",
+                    "end": "12:30"
+                },
+                {
+                    "date": "Monday",
+                    "start": "13:20",
+                    "end": "18:30"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "17:20",
+                    "end": "18:00"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "21:20",
+                    "end": "22:00"
+                }
+            ]
+        },
+        {
+            "name": "MC 2038",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "10:20",
+                    "end": "13:00"
+                },
+                {
+                    "date": "Monday",
+                    "start": "15:50",
+                    "end": "16:30"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "08:30",
+                    "end": "10:00"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "15:50",
+                    "end": "18:30"
+                }
+            ]
+        },
+        {
+            "name": "MC 2054",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "09:20",
+                    "end": "10:00"
+                },
+                {
+                    "date": "Monday",
+                    "start": "15:50",
+                    "end": "18:30"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "15:50",
+                    "end": "16:20"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "18:50",
+                    "end": "22:00"
+                }
+            ]
+        },
+        {
+            "name": "MC 2066",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "08:30",
+                    "end": "22:00"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "08:30",
+                    "end": "22:00"
+                }
+            ]
+        },
+        {
+            "name": "MC 4021",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "15:20",
+                    "end": "16:30"
+                },
+                {
+                    "date": "Monday",
+                    "start": "18:50",
+                    "end": "22:00"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "08:30",
+                    "end": "10:00"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "17:20",
+                    "end": "22:00"
+                }
+            ]
+        },
+        {
+            "name": "MC 4041",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "09:20",
+                    "end": "10:00"
+                },
+                {
+                    "date": "Monday",
+                    "start": "15:50",
+                    "end": "22:00"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "15:50",
+                    "end": "16:30"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "17:20",
+                    "end": "18:00"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "21:20",
+                    "end": "22:00"
+                }
+            ]
+        },
+        {
+            "name": "MC 4044",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "08:30",
+                    "end": "22:00"
+                }
+            ]
+        },
+        {
+            "name": "MC 4058",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "09:20",
+                    "end": "10:30"
+                },
+                {
+                    "date": "Monday",
+                    "start": "15:50",
+                    "end": "16:30"
+                },
+                {
+                    "date": "Monday",
+                    "start": "19:20",
+                    "end": "22:00"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "10:20",
+                    "end": "11:30"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "14:20",
+                    "end": "17:30"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "20:20",
+                    "end": "22:00"
+                }
+            ]
+        },
+        {
+            "name": "MC 4060",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "15:50",
+                    "end": "16:30"
+                },
+                {
+                    "date": "Monday",
+                    "start": "17:20",
+                    "end": "22:00"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "08:30",
+                    "end": "10:30"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "16:20",
+                    "end": "22:00"
+                }
+            ]
+        },
+        {
+            "name": "MC 4063",
+            "dates": [
+                {
+                    "date": "Monday",
+                    "start": "11:20",
+                    "end": "13:30"
+                },
+                {
+                    "date": "Monday",
+                    "start": "19:20",
+                    "end": "22:00"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "08:30",
+                    "end": "10:30"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "12:20",
+                    "end": "13:00"
+                },
+                {
+                    "date": "Tuesday",
+                    "start": "17:20",
+                    "end": "22:00"
+                }
+            ]
         }
     ]
 }
