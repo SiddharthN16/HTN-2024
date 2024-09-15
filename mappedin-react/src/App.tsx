@@ -1,7 +1,6 @@
 import { MapView, useMapData } from "@mappedin/react-sdk";
 import "@mappedin/react-sdk/lib/esm/index.css";
-import FloorSelector from "./FloorSelector";
-import RoomSelector from "./RoomAvailability";
+import NavBar from "./NavBar";
 import Route from "./Route";
 import { Labels } from "./Labels";
 import SpaceEvents from "./SpaceEvents";
@@ -25,8 +24,7 @@ export default function App() {
 
   return mapData ? (
     <MapView mapData={mapData}>
-      <FloorSelector />
-      <RoomSelector />
+      <NavBar />
       <Labels />
       <SpaceEvents />
       <Route />
