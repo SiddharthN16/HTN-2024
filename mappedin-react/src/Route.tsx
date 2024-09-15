@@ -14,7 +14,7 @@ const Route = () => {
 
   const entranceNode = mapData
     .getByType("space")
-    .find((space) => space.name === "10264");
+    .find((space) => space.name === "1026A");
 
   const openClassNode = mapData
     .getByType("space")

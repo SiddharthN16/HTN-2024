@@ -30,17 +30,28 @@ function SpaceEvents() {
 
     return (
         room && (
-            <div className="fixed left-2 top-20 max-w-15 bg-white shadow-md p-5 z-50 rounded-lg flex flex-col justify-center">
+            <div className="fixed left-2 top-20 max-w-full bg-white shadow-md p-5 z-50 rounded-lg">
                 <h2 className="text-2xl font-bold mb-4">{room}</h2>
-                <div className="space-y-2">
-                    <h2>{room}</h2>
-                    <ul>
-                        {selectedRoom?.dates.map((dateInfo, idx) => (
-                            <li key={idx}>
-                                {dateInfo.date}: Start - {dateInfo.start}, End - {dateInfo.end}
-                            </li>
-                        ))}
-                    </ul>
+                {selectedRoom?.dates ? <p>Available times</p> : <p>No available times</p>}
+                <div className="overflow-x-auto">
+                    <table className="min-w-full bg-white">
+                        <thead>
+                            <tr className="w-full">
+                                <th className="text-left py-3 px-4 font-semibold text-sm border-b border-gray-200">Date</th>
+                                <th className="text-left py-3 px-4 font-semibold text-sm border-b border-gray-200">Start</th>
+                                <th className="text-left py-3 px-4 font-semibold text-sm border-b border-gray-200">End</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {selectedRoom?.dates.map((dateInfo, idx) => (
+                                <tr key={idx}>
+                                    <td className="text-left py-3 px-4 border-b border-gray-200">{dateInfo.date}</td>
+                                    <td className="text-left py-3 px-4 border-b border-gray-200">{dateInfo.start}</td>
+                                    <td className="text-left py-3 px-4 border-b border-gray-200">{dateInfo.end}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         )

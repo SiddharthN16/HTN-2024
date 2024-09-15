@@ -111,7 +111,9 @@ function RoomSelector() {
     }
 
     if (availableRooms.length === 0) {
-        return;
+        return (
+            <div className="border-2 p-3 rounded text-sm">Currently no open classrooms</div>
+        );
     }
     return (
 
