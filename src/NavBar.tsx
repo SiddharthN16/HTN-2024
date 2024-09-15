@@ -14,7 +14,7 @@ export default function NavBar() {
         <p className="mx-2">LockedIn</p>
       </div>
 
-      <div className="fixed top-3 right-4 flex items-center rounded text-xl z-50 bg-white space-x-3">
+      <div className="fixed top-4 md:top-3 right-4 flex items-center rounded text-xl z-50 bg-white space-x-3">
         <FloorSelector />
         <RoomSelector />
       </div>
@@ -33,7 +33,7 @@ function FloorSelector() {
       defaultValue={mapView.currentFloor.id}
       onValueChange={(value) => mapView.setFloor(value)}
     >
-      <Select.Trigger className="inline-flex items-center justify-between p-2 bg-gray-100 text-black rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+      <Select.Trigger className="text-xs md:text-lg inline-flex items-center justify-between p-2 bg-gray-100 text-black rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
         <Select.Value />
         <Select.Icon className="ml-2">
           <ChevronDownIcon />
@@ -118,7 +118,7 @@ function RoomSelector() {
         setRoom(value);
       }}
     >
-      <Select.Trigger className="inline-flex items-center justify-between p-2 bg-gray-100 text-black rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+      <Select.Trigger className="text-xs md:text-lg inline-flex items-center justify-between p-2 bg-gray-100 text-black rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
         <Select.Value placeholder="Select" />
         <Select.Icon className="ml-2">
           <ChevronDownIcon />
