@@ -1,20 +1,23 @@
 import { Navigation, useMap } from "@mappedin/react-sdk";
 import { useRoomStore } from "../stores/roomStore";
+import { useFloorStore } from "../stores/floorStore";
 
 const extractNumbers = (str: string): string => {
   return str.replace(/\D/g, "");
 };
 
+const startAnchors = [, "", "1026A", "2074", "3089", "4108", "5806", "6806"];
+
 const Route = () => {
   const { mapData, mapView } = useMap();
 
-  const { room } = useRoomStore();
+  const { floor } = useFloorStore();
 
-  console.log(room);
+  const { room } = useRoomStore();
 
   const entranceNode = mapData
     .getByType("space")
-    .find((space) => space.name === "1026A");
+    .find((space) => space.name === startAnchors[(floor as number) + 1]);
 
   const openClassNode = mapData
     .getByType("space")

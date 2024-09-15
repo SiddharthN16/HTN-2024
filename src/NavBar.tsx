@@ -1,7 +1,9 @@
 import { useMap } from "@mappedin/react-sdk";
 import * as Select from "@radix-ui/react-select";
 import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons";
+import { useFloorStore } from "../stores/floorStore";
 import { useRoomStore } from "../stores/roomStore";
+
 import data from "../data/data.json";
 import { FaGraduationCap } from "react-icons/fa6";
 import { days } from "./constants";
@@ -24,6 +26,8 @@ export default function NavBar() {
 
 function FloorSelector() {
   const { mapData, mapView } = useMap();
+  const { setFloor } = useFloorStore();
+
   const sortedFloors = mapData
     .getByType("floor")
     .sort((a, b) => a.name.localeCompare(b.name));
@@ -31,7 +35,11 @@ function FloorSelector() {
   return (
     <Select.Root
       defaultValue={mapView.currentFloor.id}
-      onValueChange={(value) => mapView.setFloor(value)}
+      onValueChange={(value) => {
+        mapView.setFloor(value);
+        setFloor(Number(mapView.currentFloor.name.split(" ")[1]));
+        // console.log(Number(mapView.currentFloor.name.split(" ")[1]));
+      }}
     >
       <Select.Trigger className="text-xs md:text-lg inline-flex items-center justify-between p-2 bg-gray-100 text-black rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
         <Select.Value />
@@ -63,7 +71,6 @@ function FloorSelector() {
 
 function RoomSelector() {
   const { room, setRoom } = useRoomStore();
-  console.log(room);
 
   let availableRooms: any[] = [];
 
