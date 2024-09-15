@@ -6,12 +6,12 @@ function SpaceEvents() {
     const { mapView, mapData } = useMap();
     const { room, setRoom } = useRoomStore();
 
-    mapData.getByType("space").forEach((space) => {
-        mapView.updateState(space, {
-			interactive: true,
-            hoverColor: 'lightblue',
-		});
+  mapData.getByType("space").forEach((space) => {
+    mapView.updateState(space, {
+      interactive: true,
+      hoverColor: "lightblue",
     });
+  });
 
     useEvent("click", (event) => {
         const { labels, spaces } = event;

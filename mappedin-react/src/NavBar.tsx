@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useRoomStore } from "../stores/roomStore";
 import data from '../data/data.json'
 import { FaGraduationCap } from "react-icons/fa6";
+import { days } from "./constants";
 
 
 export default function NavBar() {
@@ -65,6 +66,53 @@ function FloorSelector() {
 function RoomSelector() {
     const { room, setRoom } = useRoomStore();
     console.log(room)
+
+    let availableRooms: any[] = [];
+
+    for (let i = 0; i < data.rooms.length; i++) {
+        const room = data.rooms[i];
+        const currentTime = new Date();
+        const currentHours = currentTime.getHours();
+        const currentMinutes = currentTime.getMinutes();
+
+        const currentRooms: any[] = room.dates;
+
+        for (let j = 0; j < currentRooms.length; j++) {
+        const date = new Date();
+        const currDay = days[date.getDay()];
+
+        //   if (currDay !== currentRooms[j].date) {
+        //     continue;
+        //   }
+
+        if (currDay !== "Saturday") {
+            continue;
+        }
+
+        const [startHours, startMinutes] = currentRooms[j].start
+            .split(":")
+            .map(Number);
+        if (
+            startHours < currentHours ||
+            (startHours === currentHours && startMinutes < currentMinutes)
+        ) {
+            const [endHours, endMinutes] = currentRooms[j].end
+            .split(":")
+            .map(Number);
+            if (
+            endHours > currentHours ||
+            (endHours === currentHours && endMinutes > currentMinutes)
+            ) {
+            availableRooms.push(room);
+            break;
+            }
+        }
+        }
+    }
+
+    if (availableRooms.length === 0) {
+        return;
+    }
     return (
 
         <Select.Root
@@ -74,7 +122,7 @@ function RoomSelector() {
             }}
         >
             <Select.Trigger className="inline-flex items-center justify-between p-2 bg-gray-100 text-black rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                <Select.Value />
+                <Select.Value placeholder="Select"/>
                 <Select.Icon className="ml-2">
                     <ChevronDownIcon />
                 </Select.Icon>
@@ -84,7 +132,7 @@ function RoomSelector() {
                     <ChevronDownIcon />
                 </Select.ScrollUpButton>
                 <Select.Viewport className="bg-white border border-gray-300 rounded shadow-lg">
-                    {data.rooms.map((room, idx) => (
+                    {availableRooms.map((room, idx) => (
                         <Select.Item
                             key={idx}
                             value={room.name}
