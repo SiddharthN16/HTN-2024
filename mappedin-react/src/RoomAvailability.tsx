@@ -2,15 +2,21 @@ import React, { useState } from "react";
 import data from '../data/data.json'
 import { useRoomStore } from "../stores/roomStore";
 
+const getRoomByName = (name : String) => {
+  return data.rooms.find((room) => room.name === name);
+};
+
 export default function RoomSelector() {
-    const { setRoom } = useRoomStore();
+    const { room, setRoom } = useRoomStore();
+
+    const selectedRoom = getRoomByName(room);
 
     return (
         <div
         style={{
             position: "absolute",
             bottom: "10px",
-            right: "10px",
+            right: "10px", 
             zIndex: 1000,
             display: "flex",
             alignItems: "center",
@@ -33,6 +39,30 @@ export default function RoomSelector() {
                 </option>
             ))}
             </select>
+            
+            {(
+                <div
+                    style={{
+                      marginLeft: "20px",
+                      padding: "10px",
+                      border: "1px solid #ccc",
+                      borderRadius: "5px",
+                      boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.1)",
+                      color: "black",         
+                      fontSize: "14px",   
+                    }}
+                >
+                    <h2>{room}</h2>
+                    <ul>
+                        {selectedRoom?.dates.map((dateInfo, idx) => (
+                            <li key={idx}>
+                                {dateInfo.date}: Start - {dateInfo.start}, End - {dateInfo.end}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+
         </div>
     )
 }
