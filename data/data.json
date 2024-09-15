@@ -264,9 +264,9 @@
             "name": "MC 4060",
             "dates": [
                 {
-                    "date": "Monday",
-                    "start": "15:50",
-                    "end": "16:30"
+                    "date": "Sunday",
+                    "start": "00:00",
+                    "end": "20:30"
                 },
                 {
                     "date": "Monday",
