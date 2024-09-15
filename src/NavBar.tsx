@@ -17,6 +17,7 @@ export default function NavBar() {
       </div>
 
       <div className="fixed top-4 md:top-3 right-4 flex items-center rounded text-xl z-50 bg-white space-x-3">
+        <BuildingSelector />
         <FloorSelector />
         <RoomSelector />
       </div>
@@ -152,6 +153,42 @@ function RoomSelector() {
         <Select.ScrollDownButton className="flex items-center justify-center text-gray-700">
           <ChevronDownIcon />
         </Select.ScrollDownButton>
+      </Select.Content>
+    </Select.Root>
+  );
+}
+
+function BuildingSelector() {
+  const buildings = [
+    { id: 'MC', name: 'MC' },
+    { id: 'M3', name: 'M3' },
+  ];
+
+  return (
+    <Select.Root defaultValue={"MC"}>
+      <Select.Trigger className="text-xs md:text-lg inline-flex items-center justify-between p-2 bg-gray-100 text-black rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        <Select.Value />
+        <Select.Icon className="ml-2">
+          <ChevronDownIcon />
+        </Select.Icon>
+      </Select.Trigger>
+      <Select.Content>
+        <Select.ScrollUpButton />
+        <Select.Viewport className="bg-white border border-gray-300 rounded shadow-lg">
+          {buildings.map((building, idx) => (
+            <Select.Item
+              key={idx}
+              value={building.id}
+              className="relative select-none p-2 pl-8 pr-8 cursor-pointer rounded focus:bg-blue-500 focus:text-white"
+            >
+              <Select.ItemText>{building.name}</Select.ItemText>
+              <Select.ItemIndicator className="absolute left-2">
+                <CheckIcon />
+              </Select.ItemIndicator>
+            </Select.Item>
+          ))}
+        </Select.Viewport>
+        <Select.ScrollDownButton />
       </Select.Content>
     </Select.Root>
   );
