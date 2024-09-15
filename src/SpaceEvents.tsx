@@ -23,7 +23,7 @@ function SpaceEvents() {
   });
 
     useEvent("click", (event) => {
-        const { labels, spaces } = event;
+        const { labels } = event;
         console.log(event)
         if (labels.length >= 1) {
             setRoom("MC " + labels[0].text);
