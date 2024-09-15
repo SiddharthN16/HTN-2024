@@ -1,7 +1,6 @@
 import { useMap } from "@mappedin/react-sdk";
 import * as Select from '@radix-ui/react-select';
 import { CheckIcon, ChevronDownIcon } from '@radix-ui/react-icons';
-import React, { useEffect, useState } from 'react';
 import { useRoomStore } from "../stores/roomStore";
 import data from '../data/data.json'
 import { FaGraduationCap } from "react-icons/fa6";
