@@ -7,20 +7,20 @@ import { useState } from "react";
 
 
 function SpaceEvents() {
-  const { mapView, mapData } = useMap();
-  const { room, setRoom } = useRoomStore();
+    const { mapView, mapData } = useMap();
+    const { room, setRoom } = useRoomStore();
 
-  const getRoomByName = (name: String) => {
-    return data.rooms.find((room) => room.name === name);
-  };
-  const selectedRoom = getRoomByName(room);
+    const getRoomByName = (name: String) => {
+        return data.rooms.find((room) => room.name === name);
+    };
+    const selectedRoom = getRoomByName(room);
 
-  mapData.getByType("space").forEach((space) => {
-    mapView.updateState(space, {
-      interactive: true,
-      hoverColor: "lightblue",
+    mapData.getByType("space").forEach((space) => {
+        mapView.updateState(space, {
+            interactive: true,
+            hoverColor: "lightblue",
+        });
     });
-  });
 
     useEvent("click", (event) => {
         const { labels } = event;
@@ -31,7 +31,7 @@ function SpaceEvents() {
     });
 
     const [isFavorite, setIsFavorite] = useState(false);
-    const [likes, setLikes] = useState(0);
+    const [likes, setLikes] = useState(getLikes(room ?? "a"));
 
     const handleFavoriteClick = () => {
         setIsFavorite(!isFavorite);
@@ -46,10 +46,10 @@ function SpaceEvents() {
                     <h2 className="text-2xl font-bold mb-4">{room}</h2>
                     <div className="flex space-x-4 mb-4 items-center">
                         <Tags tags={["Accessible"]} />
-                        <StarRatings stars={3.0} />
+                        <StarRatings stars={getStars(room ?? "a")} />
                     </div>
                     {!selectedRoom?.dates && <p>No available today</p>}
-                    {selectedRoom?.dates && (<> 
+                    {selectedRoom?.dates && (<>
                         <p>Available times</p>
                         <div className="overflow-x-auto">
                             <table className="min-w-full bg-white">
@@ -124,6 +124,28 @@ function Likes({ likes, isFavorite, onClick }: { likes: number, isFavorite: bool
             </Tooltip.Root>
         </div>
     );
+}
+
+function getStars(input: string): number {
+    let hash = 0;
+    for (let i = 0; i < input.length; i++) {
+        const char = input.charCodeAt(i);
+        hash = (hash << 5) - hash + char;
+        hash |= 0;
+    }
+    const randomInt = (Math.abs(hash) % 5) + 1;
+    return randomInt;
+}
+
+function getLikes(input: string): number {
+    let hash = 0;
+    for (let i = 0; i < input.length; i++) {
+        const char = input.charCodeAt(i);
+        hash = (hash << 5) - hash + char;
+        hash |= 0; 
+    }
+    const randomInt = (Math.abs(hash) % 20) + 1;
+    return randomInt;
 }
 
 export default SpaceEvents;
